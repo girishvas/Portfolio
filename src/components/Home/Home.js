@@ -5,6 +5,8 @@ import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 
+import portfolioData from "../../portfolio.json";
+
 function Home() {
   return (
     <section>
@@ -22,7 +24,10 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> SOUMYAJIT BEHERA</strong>
+                <strong className="main-name">
+                  {" "}
+                  {portfolioData.name.toUpperCase()}{" "}
+                </strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
