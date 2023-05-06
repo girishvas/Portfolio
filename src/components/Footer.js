@@ -7,9 +7,12 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
+import portfolioData from "../portfolio.json";
+
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
+  const { github, linked_in, instagram, twitter } = portfolioData;
   return (
     <Container fluid className="footer">
       <Row>
@@ -21,46 +24,54 @@ function Footer() {
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://twitter.com/Soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/soumyajit4419/"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/soumyajit4419"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
+            {github && (
+              <li className="social-icons">
+                <a
+                  href={github}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillGithub />
+                </a>
+              </li>
+            )}
+            {twitter && (
+              <li className="social-icons">
+                <a
+                  href={twitter}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiOutlineTwitter />
+                </a>
+              </li>
+            )}
+            {linked_in && (
+              <li className="social-icons">
+                <a
+                  href={linked_in}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn />
+                </a>
+              </li>
+            )}
+            {instagram && (
+              <li className="social-icons">
+                <a
+                  href={instagram}
+                  style={{ color: "white" }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillInstagram />
+                </a>
+              </li>
+            )}
           </ul>
         </Col>
       </Row>

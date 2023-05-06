@@ -8,6 +8,7 @@ import Type from "./Type";
 import portfolioData from "../../portfolio.json";
 
 function Home() {
+  const { name } = portfolioData;
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -24,10 +25,7 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name">
-                  {" "}
-                  {portfolioData.name.toUpperCase()}{" "}
-                </strong>
+                <strong className="main-name"> {name.toUpperCase()} </strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
