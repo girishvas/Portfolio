@@ -1,9 +1,8 @@
 {
-  "name": "James Bond",
+  "name": "Mohit Harshan",
   "location": "Kochi, Kerala",
-  "work_or_education": "I am a software engineer at 007.",
+  "work_or_education": "I am a software engineer at BigBinary.",
   "skillset": [
-    "AWS",
     "React",
     "Ruby on Rails",
     "MERN Stack",
