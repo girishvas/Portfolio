@@ -1,8 +1,9 @@
 {
-  "name": "Mohit Harshan",
+  "name": "James Bond",
   "location": "Kochi, Kerala",
-  "work_or_education": "I am a software engineer at BigBinary.",
+  "work_or_education": "I am a software engineer at 007.",
   "skillset": [
+    "AWS",
     "React",
     "Ruby on Rails",
     "MERN Stack",
@@ -26,7 +27,7 @@
   "moto": "Strive to build things that make a difference!",
   "projects": [
     {
-      "title": "Scramble",
+      "title": "Scramble-Edited",
       "description": "An Online multi player game where players have to rearrange characters to form a word.",
       "github_link": "https://github.com/mohitharshan123/scramble/tree/master",
       "demo_link": "",
