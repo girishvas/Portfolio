@@ -1,0 +1,66 @@
+# Render YAML file for deploying a production static website
+
+# Name of the service
+name: portfolio
+
+# The environment in which to deploy the service
+environment: production
+
+# The Dockerfile to use for the service (in this case, none)
+dockerfile: ""
+
+# The language for the service (in this case, none)
+language: ""
+
+# The directory that contains the static website files
+static_dirs:
+  - /public
+
+# The command to run to start the service (in this case, none)
+start_command: ""
+
+# The URL to access the service
+routes:
+  - path: /
+    destinations:
+      - port: http
+
+# The environment variables to set for the service (in this case, none)
+env:
+  - key: ""
+    value: ""
+
+# Configure caching for static assets
+caching_rules:
+  - url_pattern: \.(png|svg|jpg|jpeg|gif|ico|css|js)$
+    cache_control: "public, max-age=31536000, immutable"
+
+# Enable gzip compression for faster delivery
+gzip:
+  - path: /public
+
+# Enable HTTP/2 for faster page loads
+http2: true
+
+# Enable HTTPS for a secure connection
+ssl:
+  automatic: true
+
+# Enable automatic redirects to HTTPS
+redirects:
+  - source: "http://{{ app.domain }}/*"
+    destination: "https://{{ app.domain }}/$1"
+    type: 301
+    force: true
+
+# Set security headers to protect against common attacks
+security_headers:
+  x-xss-protection: "1; mode=block"
+  x-content-type-options: "nosniff"
+  referrer-policy: "same-origin"
+  content-security-policy: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'"
+
+# Set a custom error page
+error_pages:
+  - code: 404
+    path: /public/404.html
