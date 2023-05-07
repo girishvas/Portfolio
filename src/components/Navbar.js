@@ -21,7 +21,7 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  const { blog_url: blogUrl } = portfolioData;
+  const { blog_url: blogUrl, name } = portfolioData;
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -42,7 +42,13 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+          <strong className="main-name">
+            {" "}
+            {`${name
+              .split(" ")
+              .map((i) => i.charAt(0))
+              .join("")}.`}{" "}
+          </strong>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
